@@ -132,9 +132,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        
         if(section == 0)
         {
-        cell.sectionName.text = "iCHT à proximité"
+        cell.sectionName.text = "iCHT à proximité (iBeacon)"
             
-            
+            cell.nbrICHT.text = Moscow.count.description
+    
             
             
             cell.disclosureicon.image = Moscclosureicon
@@ -143,7 +144,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if(section == 1){
         cell.sectionName.text = "iCHT à distance"
             
-           
+            cell.nbrICHT.text = Kiyv.count.description
+
             
             cell.disclosureicon.image = Kiyvclosureicon
         }

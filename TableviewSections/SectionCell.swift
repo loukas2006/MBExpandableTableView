@@ -12,6 +12,7 @@ class SectionCell: UITableViewCell {
 
     @IBOutlet weak var sectionName: UILabel!
     
+    @IBOutlet weak var nbrICHT: UILabel!
     @IBOutlet weak var disclosureicon: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

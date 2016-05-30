@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -34,24 +35,34 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-Gx-QiJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-Gx-QiJ">
                                                     <rect key="frame" x="17" y="17" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="swz-K6-6xt"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pf-CT-BPg">
+                                                    <rect key="frame" x="118" y="14" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="fPp-Df-msx" firstAttribute="centerY" secondItem="Jba-GO-DQs" secondAttribute="centerY" id="8sB-dh-NAa"/>
-                                                <constraint firstItem="fPp-Df-msx" firstAttribute="centerX" secondItem="Jba-GO-DQs" secondAttribute="centerX" id="X0x-kr-y0o"/>
-                                                <constraint firstItem="fPp-Df-msx" firstAttribute="leading" secondItem="Jba-GO-DQs" secondAttribute="leading" constant="58" id="xmr-6W-5Zj"/>
+                                                <constraint firstItem="PUq-Gx-QiJ" firstAttribute="top" secondItem="Jba-GO-DQs" secondAttribute="topMargin" constant="9" id="1A1-UL-c9e"/>
+                                                <constraint firstItem="PUq-Gx-QiJ" firstAttribute="leading" secondItem="Jba-GO-DQs" secondAttribute="leadingMargin" constant="9" id="363-KK-ian"/>
+                                                <constraint firstItem="fPp-Df-msx" firstAttribute="top" secondItem="Jba-GO-DQs" secondAttribute="top" constant="14" id="Gi8-6e-svT"/>
+                                                <constraint firstAttribute="bottom" secondItem="fPp-Df-msx" secondAttribute="bottom" constant="14" id="Qcj-QS-ois"/>
+                                                <constraint firstItem="fPp-Df-msx" firstAttribute="leading" secondItem="PUq-Gx-QiJ" secondAttribute="trailing" constant="26" id="QyD-hd-fRg"/>
+                                                <constraint firstItem="6Pf-CT-BPg" firstAttribute="leading" secondItem="fPp-Df-msx" secondAttribute="trailing" constant="18" id="Z4D-uV-hSM"/>
+                                                <constraint firstItem="PUq-Gx-QiJ" firstAttribute="centerY" secondItem="fPp-Df-msx" secondAttribute="centerY" id="cre-XU-bo6"/>
+                                                <constraint firstItem="PUq-Gx-QiJ" firstAttribute="centerY" secondItem="6Pf-CT-BPg" secondAttribute="centerY" id="uNT-jZ-oPX"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="X0x-kr-y0o"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="disclosureicon" destination="PUq-Gx-QiJ" id="7B3-Jb-ns8"/>
+                                            <outlet property="nbrICHT" destination="6Pf-CT-BPg" id="gH7-gu-Hhc"/>
                                             <outlet property="sectionName" destination="fPp-Df-msx" id="QWg-TD-4H2"/>
                                         </connections>
                                     </tableViewCell>
@@ -84,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="280"/>
+            <point key="canvasLocation" x="-216" y="-39"/>
         </scene>
     </scenes>
 </document>
