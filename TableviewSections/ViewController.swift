@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var Kiyvclosureicon = UIImage()
 
- var moscowinter  = [String]()
+    var moscowinter  = [String]()
     
     var kiyvinter = [String]()
 
@@ -45,14 +45,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-       tableview.backgroundColor = UIColor.clearColor()
+        tableview.backgroundColor = UIColor.clearColor()
          moscowinter = Moscow
          kiyvinter = Kiyv
         
         
-        Kiyvclosureicon = UIImage(named: "disclosure icon closed")!
+         Kiyvclosureicon = UIImage(named: "disclosure icon closed")!
         
-        Moscclosureicon = UIImage(named: "disclosure icon closed")!
+         Moscclosureicon = UIImage(named: "disclosure icon closed")!
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -63,6 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+
         return array.count
 
     }
@@ -86,12 +87,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell;
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SimpleCell;
+        
+        print(cell.frame.width)
         
         
         if(indexPath.section == 0 && Moscclicked == 0)
         {
-            cell.textLabel?.text = moscowinter[indexPath.row]
+            cell.countryname?.text = moscowinter[indexPath.row]
             cell.textLabel?.textColor = UIColor(red: 0, green: 0.7137, blue: 1, alpha: 1.0) /* #00b6ff */
 
 
@@ -99,7 +102,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if(indexPath.section == 1 && Kiyvclicked == 0)
         {
             
-            cell.textLabel?.text = Kiyv[indexPath.row]
+              cell.countryname?.text = Kiyv[indexPath.row]
               cell.textLabel?.textColor = UIColor(red: 0, green: 0.7137, blue: 1, alpha: 1.0) /* #00b6ff */
 
         }
@@ -112,8 +115,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return array[section][0]
     }
     
-  func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    if(section == 0){
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+       
+        if(section == 0){
         let recognizer = UITapGestureRecognizer(target: self , action: #selector(ViewController.printmoscow))
         view.addGestureRecognizer(recognizer)}
     
@@ -121,46 +125,92 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let recognizer = UITapGestureRecognizer(target: self , action: #selector(ViewController.printkiyv))
         view.addGestureRecognizer(recognizer)
     }
+        
     
     }
     
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let vw = UIView()
+    
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let headerView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, 50))
+     
+            headerView.backgroundColor = UIColor.greenColor()
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Section")! as! SectionCell;
-       
+         let cell = tableView.dequeueReusableCellWithIdentifier("Section")! as! SectionCell
+        
         if(section == 0)
-        {
-        cell.sectionName.text = "iCHT à proximité (iBeacon)"
-            
-            cell.nbrICHT.text = Moscow.count.description
+                {
+                cell.sectionName.text = "iCHT à proximité (iBeacon)"
+        
+                    cell.nbrICHT.text = Moscow.count.description
+        
+        
+        
+                    cell.disclosureicon.image = Moscclosureicon
+                }
+        
+                if(section == 1){
+                cell.sectionName.text = "iCHT à distance"
+        
+                    cell.nbrICHT.text = Kiyv.count.description
+        
+                    
+                    cell.disclosureicon.image = Kiyvclosureicon
+                }
+
     
-            
-            
-            cell.disclosureicon.image = Moscclosureicon
-        }
+        headerView.addSubview(cell)
+       
+        return cell.contentView
         
-        if(section == 1){
-        cell.sectionName.text = "iCHT à distance"
-            
-            cell.nbrICHT.text = Kiyv.count.description
-
-            
-            cell.disclosureicon.image = Kiyvclosureicon
-        }
-
-        
-        vw.addSubview(cell)
-
-        
-        return vw
     }
+    
+    
+    
+//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//        let vw = UIView()
+//        
+//        let cell = tableView.dequeueReusableCellWithIdentifier("Section")! as! SectionCell;
+//        
+//        print(cell.frame.width)
+//
+//       
+//        if(section == 0)
+//        {
+//        cell.sectionName.text = "iCHT à proximité (iBeacon)"
+//            
+//            cell.nbrICHT.text = Moscow.count.description
+//    
+//            
+//            
+//            cell.disclosureicon.image = Moscclosureicon
+//        }
+//        
+//        if(section == 1){
+//        cell.sectionName.text = "iCHT à distance"
+//            
+//            cell.nbrICHT.text = Kiyv.count.description
+//
+//            
+//            cell.disclosureicon.image = Kiyvclosureicon
+//        }
+//
+//        
+//        vw.addSubview(cell)
+//
+//        
+//        return vw
+//    }
+//    
+
+   
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-   
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1

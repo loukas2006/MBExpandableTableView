@@ -15,6 +15,7 @@
 		82BB745B1CF7089000131145 /* TableviewSectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB745A1CF7089000131145 /* TableviewSectionsTests.swift */; };
 		82BB74661CF7089000131145 /* TableviewSectionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB74651CF7089000131145 /* TableviewSectionsUITests.swift */; };
 		82BB74741CFC2AF500131145 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB74731CFC2AF500131145 /* SectionCell.swift */; };
+		82F481791CFDD2F20085AFBE /* SimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F481781CFDD2F20085AFBE /* SimpleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		82BB74651CF7089000131145 /* TableviewSectionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableviewSectionsUITests.swift; sourceTree = "<group>"; };
 		82BB74671CF7089000131145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82BB74731CFC2AF500131145 /* SectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
+		82F481781CFDD2F20085AFBE /* SimpleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				82BB74451CF7088F00131145 /* AppDelegate.swift */,
 				82BB74471CF7088F00131145 /* ViewController.swift */,
 				82BB74731CFC2AF500131145 /* SectionCell.swift */,
+				82F481781CFDD2F20085AFBE /* SimpleCell.swift */,
 				82BB74491CF7088F00131145 /* Main.storyboard */,
 				82BB744C1CF7088F00131145 /* Assets.xcassets */,
 				82BB744E1CF7088F00131145 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82BB74741CFC2AF500131145 /* SectionCell.swift in Sources */,
+				82F481791CFDD2F20085AFBE /* SimpleCell.swift in Sources */,
 				82BB74481CF7088F00131145 /* ViewController.swift in Sources */,
 				82BB74461CF7088F00131145 /* AppDelegate.swift in Sources */,
 			);
